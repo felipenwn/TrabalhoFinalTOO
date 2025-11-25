@@ -1,30 +1,45 @@
-class Animal:
-    def __init__(self, nome, especie, raça, data_nascimento, cor):
-        self.nome = nome
-        self.especie = especie
-        self.raça = raça
-        self.data_nascimento = data_nascimento
-        self.cor = cor
+from abc import ABC, abstractmethod
 
-    def atualizarInformacoes(self, nome=None, especie=None, raça=None, data_nascimento=None, cor=None):
-            if nome:
-                self.nome = nome
-            if especie:
-                self.especie = especie
-            if raça:
-                self.raça = raça
-            if data_nascimento:
-                self.data_nascimento = data_nascimento
-            if cor:
-                self.cor = cor
 
-    def registrarConsulta(self, data_consulta, motivo, veterinario):
-        consulta = {
-            "data_consulta": data_consulta,
-            "motivo": motivo,
-            "veterinario": veterinario
-        }
-        return consulta
+class Animal(ABC):
+    def __init__(self, nome, especie, raca, data_nascimento, cor):
+
+        self._nome = nome
+        self._especie = especie
+        self._raca = raca
+        self._data_nascimento = data_nascimento
+        self._cor = cor
+        self._historico_consultas = [] 
+
+
+    @property
+    def nome(self):
+        return self._nome
     
+    @property
+    def historico_consultas(self):
+        return self._historico_consultas
+
+    def atualizarInformacoes(self, nome=None, especie=None, raca=None, data_nascimento=None, cor=None):
+            if nome:
+                self._nome = nome
+            if especie:
+                self._especie = especie
+            if raca:
+                self._raca = raca
+            if data_nascimento:
+                self._data_nascimento = data_nascimento
+            if cor:
+                self._cor = cor
+
+
+    def registrarConsulta(self, consulta):
+        self._historico_consultas.append(consulta)
+    
+ 
+    @abstractmethod
     def emitirSom(self):
-        return "Som genérico de animal"
+        pass
+
+    def __str__(self):
+        return f"Animal: {self._nome} ({self._especie}/{self._raca})"
