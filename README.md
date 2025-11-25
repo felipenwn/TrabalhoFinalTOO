@@ -26,7 +26,7 @@ O sistema foi modelado utilizando o Diagrama de Classes UML (Unified Modeling La
 
 ### 2.1. Diagrama de Classes UML
 
-![imagem-UML](<TrabalhoFinalTOO/src/img/Diagrama UML.jpg>)
+![imagem-UML](<./TrabalhoFinalTOO/src/img/Diagrama UML.jpg>)
 
 ***
 
