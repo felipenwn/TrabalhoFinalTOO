@@ -26,7 +26,7 @@ O sistema foi modelado utilizando o Diagrama de Classes UML (Unified Modeling La
 
 ### 2.1. Diagrama de Classes UML
 
-![imagem-UML](<./TrabalhoFinalTOO/src/img/Diagrama UML.jpg>)
+![imagem-UML](<./src/img/Diagrama_UML.jpg>)
 
 ***
 
@@ -71,8 +71,20 @@ O Encapsulamento protege os dados internos de um objeto, controlando o acesso e 
 * Acesso via Getters (`@property`) e modificação via métodos públicos (ex: `Tutor.atualizarDados()`).
 
 **Exemplo de Código:**
-
-[INSIRA O TRECHO DE CÓDIGO DO GETTER (@property) EM Tutor.py AQUI]
+   
+  ```
+    @property
+    def nome(self):
+        return self._nome
+    
+    @property
+    def cpf(self):
+        return self._cpf
+        
+    @property
+    def animais(self):
+        return self._animais
+```
 
 ### 4.2. Herança (Inheritance)
 
@@ -83,8 +95,13 @@ A Herança permite que uma nova classe (subclasse) herde atributos e métodos de
 * `Cachorro`, `Gato` e `Cavalo` **herdam** de `Animal`.
 
 **Exemplo de Código:**
-
-[INSIRA O TRECHO DE CÓDIGO DE super().__init__(...) NA CLASSE Veterinario.py AQUI]
+```
+class Veterinario(Funcionario):
+    def __init__(self, nome, cpf, salario, crmv, especialidade):
+        super().__init__(nome, cpf, salario)
+        self._crmv = crmv
+        self._especialidade = especialidade
+```
 
 ### 4.3. Polimorfismo (Polymorphism)
 
@@ -94,8 +111,19 @@ O Polimorfismo permite que objetos de diferentes classes respondam de maneiras d
 * O método `emitirSom()` é definido em `Animal` e **sobrescrito** em cada subclasse (`Cachorro`, `Gato`, `Cavalo`), gerando resultados diferentes para a mesma chamada.
 
 **Exemplo de Código:**
+```
+print("\n--- 2. POLIMORFISMO: Emitir Som ---")
+bichano = Gato("Félix", "Siamês", "2020-01-01", "Branco")
+rex = Cachorro("Rex", "Pastor Alemão", "2018-05-15", "Preto e Marrom")
 
-[INSIRA O TRECHO DE CÓDIGO DA IMPLEMENTAÇÃO DE emitirSom() NA CLASSE Cachorro.py AQUI]
+animais = [bichano, rex]
+for animal in animais:
+    print(f"{animal.nome} ({animal._especie}) diz: {animal.emitirSom()}") 
+```
+resultado: 
+
+**Félix** (Gato) diz: **Miau!**
+**Rex** (Cachorro) diz: **Au Au!**
 
 ### 4.4. Abstração (Abstraction)
 
@@ -107,10 +135,20 @@ A Abstração foca apenas nos aspectos essenciais de um objeto, escondendo a com
 
 **Exemplo de Código:**
 
-[INSIRA O TRECHO DE CÓDIGO DA CLASSE Animal.py DEMONSTRANDO ABC E @abstractmethod AQUI]
+from abc import ABC, abstractmethod
+
+```
+class Animal(ABC):
+    def __init__(self, nome, especie, raca, data_nascimento, cor):
+
+        self._nome = nome
+        self._especie = especie
+        self._raca = raca
+        self._data_nascimento = data_nascimento
+        self._cor = cor
+        self._historico_consultas = [] 
+```
 
 ***
 
-## 5. Demonstração de Execução
 
-[INSIRA A IMAGEM OU TRECHO DE CÓDIGO DA EXECUÇÃO DO SEU ARQUIVO DE TESTE (test_pilares_poo.py) AQUI]
