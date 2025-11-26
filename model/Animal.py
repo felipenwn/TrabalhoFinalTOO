@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from Consulta import Consulta
+from .Consulta import Consulta
 
 class Animal(ABC):
     def __init__(self, nome, especie, raca, data_nascimento, cor):

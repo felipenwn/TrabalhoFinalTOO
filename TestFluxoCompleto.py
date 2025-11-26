@@ -4,11 +4,25 @@ from model.Gato import Gato
 from model.Veterinario import Veterinario 
 from model.Recepcionista import Recepcionista
 from model.Consulta import Consulta
-
+from model.AnimalFactory import AnimalFactory 
+from model.FuncionarioFactory import FuncionarioFactory
 
 print("--- 1. HERANÇA: Criação de Objetos ---")
-vet = Veterinario("Dr. Ricardo Santos", "123.456", 5000.00, "CRMV-100", "Clínico Geral")
-recep = Recepcionista("Ana Silva", "789.012", 2000.00, "Manhã")
+vet = FuncionarioFactory.criar_funcionario(
+    "Veterinario", 
+    "Dr. Ricardo Santos", 
+    "123.456", 
+    5000.00, 
+    crmv="CRMV-100", 
+    especialidade="Clínico Geral"
+)
+recep = FuncionarioFactory.criar_funcionario(
+    "Recepcionista", 
+    "Ana Silva", 
+    "789.012", 
+    2000.00, 
+    turno="Manhã"
+)
 
 
 print(vet)
@@ -17,8 +31,8 @@ print(recep)
 
 
 print("\n--- 2. POLIMORFISMO: Emitir Som ---")
-bichano = Gato("Félix", "Siamês", "2020-01-01", "Branco")
-rex = Cachorro("Rex", "Pastor Alemão", "2018-05-15", "Preto e Marrom")
+bichano = AnimalFactory.criar_animal("gato", "Félix", "Siamês", "2020-01-01", "Branco")
+rex = AnimalFactory.criar_animal("cachorro", "Rex", "Pastor Alemão", "2018-05-15", "Preto e Marrom")
 
 animais = [bichano, rex]
 for animal in animais:

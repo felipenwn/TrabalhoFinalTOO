@@ -72,7 +72,7 @@ O Encapsulamento protege os dados internos de um objeto, controlando o acesso e 
 
 **Exemplo de Código:**
    
-  ```
+  ```python
     @property
     def nome(self):
         return self._nome
@@ -95,7 +95,7 @@ A Herança permite que uma nova classe (subclasse) herde atributos e métodos de
 * `Cachorro`, `Gato` e `Cavalo` **herdam** de `Animal`.
 
 **Exemplo de Código:**
-```
+```python
 class Veterinario(Funcionario):
     def __init__(self, nome, cpf, salario, crmv, especialidade):
         super().__init__(nome, cpf, salario)
@@ -111,7 +111,7 @@ O Polimorfismo permite que objetos de diferentes classes respondam de maneiras d
 * O método `emitirSom()` é definido em `Animal` e **sobrescrito** em cada subclasse (`Cachorro`, `Gato`, `Cavalo`), gerando resultados diferentes para a mesma chamada.
 
 **Exemplo de Código:**
-```
+```python
 print("\n--- 2. POLIMORFISMO: Emitir Som ---")
 bichano = Gato("Félix", "Siamês", "2020-01-01", "Branco")
 rex = Cachorro("Rex", "Pastor Alemão", "2018-05-15", "Preto e Marrom")
@@ -123,6 +123,7 @@ for animal in animais:
 resultado: 
 
 **Félix** (Gato) diz: **Miau!**
+---
 **Rex** (Cachorro) diz: **Au Au!**
 
 ### 4.4. Abstração 
@@ -137,7 +138,7 @@ A Abstração foca apenas nos aspectos essenciais de um objeto, escondendo a com
 
 from abc import ABC, abstractmethod
 
-```
+```python
 class Animal(ABC):
     def __init__(self, nome, especie, raca, data_nascimento, cor):
 
