@@ -62,7 +62,7 @@ O sistema foi modelado utilizando o Diagrama de Classes UML (Unified Modeling La
 
 O projeto foi estruturado para destacar a aplicação prática dos quatro pilares essenciais da POO.
 
-### 4.1. Encapsulamento (Encapsulation)
+### 4.1. Encapsulamento 
 
 O Encapsulamento protege os dados internos de um objeto, controlando o acesso e a modificação de seus atributos.
 
@@ -86,7 +86,7 @@ O Encapsulamento protege os dados internos de um objeto, controlando o acesso e 
         return self._animais
 ```
 
-### 4.2. Herança (Inheritance)
+### 4.2. Herança 
 
 A Herança permite que uma nova classe (subclasse) herde atributos e métodos de uma classe existente (superclasse), promovendo a reutilização de código e definindo relações "É UM".
 
@@ -103,7 +103,7 @@ class Veterinario(Funcionario):
         self._especialidade = especialidade
 ```
 
-### 4.3. Polimorfismo (Polymorphism)
+### 4.3. Polimorfismo 
 
 O Polimorfismo permite que objetos de diferentes classes respondam de maneiras distintas ao mesmo comando ou método, através da sobrescrita (override) de métodos.
 
@@ -125,7 +125,7 @@ resultado:
 **Félix** (Gato) diz: **Miau!**
 **Rex** (Cachorro) diz: **Au Au!**
 
-### 4.4. Abstração (Abstraction)
+### 4.4. Abstração 
 
 A Abstração foca apenas nos aspectos essenciais de um objeto, escondendo a complexidade desnecessária e definindo um contrato para as classes filhas.
 
