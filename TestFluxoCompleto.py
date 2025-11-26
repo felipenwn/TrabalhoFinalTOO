@@ -61,3 +61,18 @@ print(f"Novo status da consulta: {consulta1._status}")
 
 rex.registrarConsulta(consulta1)
 print(f"Consultas no prontuário do Rex: {len(rex.historico_consultas)}")
+
+
+print("\n--- 5. OBSERVER: ---")
+tutor_observer = Tutor("Joana Oliveira", "555.555.555-55", "4444-3333", "Av. Observer") 
+consulta_observer = Consulta("2025-11-26", "14:00", "Acompanhamento", rex, vet)
+
+
+consulta_observer.anexar(tutor_observer)
+print(f"Status inicial: {consulta_observer._status}")
+
+# 2. Mudança de Estado: Finalizar
+print("Ação: Veterinário finaliza a consulta...")
+vet.atenderConsulta(consulta_observer, "Exames OK. Tudo normal.") # Este método chama consulta_observer.finalizarConsulta()
+print(f"Status final: {consulta_observer._status}")
+

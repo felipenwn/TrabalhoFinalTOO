@@ -38,5 +38,8 @@ class Tutor:
         if endereco:
             self._endereco = endereco
             
+    def atualizar(self, consulta):
+        print(f" [Tutor: {self.nome}] NOTIFICAÇÃO: A consulta de {consulta.animal.nome} ({consulta._animal._especie}) foi '{consulta._status}'.") 
+
     def __str__(self):
         return f"Tutor: {self._nome} (CPF: {self._cpf}). Animais: {len(self._animais)}"
